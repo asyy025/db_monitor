@@ -97,11 +97,11 @@ AUTHENTICATION_BACKENDS = ('system.views.CustomBackend',)  ## 重新登录验证
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'HOST': 'db',
+        'HOST': '114.132.122.225',
         'PORT': '3306',
-        'NAME': 'db_monitor',
+        'NAME': 'db_monitor_v1',
         'USER': 'root',
-        'PASSWORD': 'mysqld',
+        'PASSWORD': 'Xjd70229314.',
     }
 }
 
@@ -192,9 +192,10 @@ PAGINATION_SETTINGS = {
 DISPLAY_PER_PAGE = 15
 
 ## celery 4
-CELERY_RESULT_BACKEND = 'redis://redis:6379/1'
+# 本地redis缓存
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/1'
 # CELERY_RESULT_BACKEND = 'django-db'
-CELERY_BROKER_URL = 'redis://redis:6379/2'
+CELERY_BROKER_URL = 'redis://localhost:6379/2'
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 CELERYD_CONCURRENCY = 4
 CELERY_TIMEZONE = 'Asia/Shanghai'
@@ -282,9 +283,9 @@ IS_SEND_EMAIL = 0
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.163.com'
 EMAIL_PORT = 25
-EMAIL_HOST_USER = '*******'
+EMAIL_HOST_USER = 'asyy0252023@163.com'
 EMAIL_HOST_PASSWORD = '*********'
-EMAIL_TO_USER = ['1782365880@qq.com','gumengkai@hotmail.com']
+EMAIL_TO_USER = ['1354358423@qq.com']
 
 # send dingding
 IS_SEND_DING_MSG = 0
