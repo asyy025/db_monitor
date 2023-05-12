@@ -1,4 +1,4 @@
-from __future__ import absolute_import, unicode_literals
+from __future__ import absolute_import, unicode_literals  # 便在Python 2.x中使用Python 3.x的一些特性。使用绝对导入和unicode字符串。
 import os
 from celery.schedules import crontab
 from datetime import timedelta

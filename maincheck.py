@@ -10,6 +10,7 @@ from multiprocessing import Process
 
 if __name__ == '__main__':
     # all minitoring servers
+    # 对所有监控的服务器进行检查
     linux_list = mysql_query('select tags,host,sshport,user,password from linux_list')
     oracle_list = mysql_query(
         'select t1.tags,t1.host,t1.port,t1.service_name,t1.db_user,t1.db_password,t1.db_user_cdb,t1.db_password_cdb,t1.service_name_cdb,'
@@ -35,6 +36,7 @@ if __name__ == '__main__':
                 'username': each[3],
                 'password': each[4]
             }
+            # 使用多进程对每一个服务器进行监控检查
             linux_check = Process(target=check_linux, args=(tags, linux_params))
             linux_check.start()
             check_pool.append(linux_check)

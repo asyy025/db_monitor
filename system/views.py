@@ -22,6 +22,7 @@ from utils.tools import mysql_django_query
 from rest_framework.renderers import JSONRenderer
 from system.tasks import oracle_rac_setup,oracle_rac_onenode_setup,oracle_onenode_setup,mysql_setup
 
+# 创建了一个名为’system’的Logger对象，该对象可以用于记录与系统相关的日志消息。
 logger = logging.getLogger('system')
 
 class UserInfo(APIView):
